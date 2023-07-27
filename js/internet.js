@@ -59,9 +59,11 @@ function tinhtheokh(loaikhachhang, sokn, sokcc, phihd, phicb, phicc, phiskn) {
     if (loaikhachhang === "Nhà Dân") {
         tien = phihd + phicb + sokcc * phicc;
     }
-    else if (loaikhachhang === "Doanh Nghiệp") {
-        tien = phihd + phicb + sokcc * phicc + sokn * phiskn;
-    } else {
+    else if (loaikhachhang === "Doanh Nghiệp" && sokn <= 10) {
+        tien = phihd + phicb + sokcc * phicc;
+    } else if (loaikhachhang === "Doanh Nghiệp" && sokn > 10) {
+        tien = phihd + phicb + sokcc * phicc + (sokn - 10) * phiskn
+    } {
     }
     return tien;
 }
